@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Control Horario</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Incluir jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- Incluir SheetJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Gestión de Control Horario</h1>
+
+    <!-- Registro de Trabajadores -->
+    <section>
+      <h2>Registrar Trabajador</h2>
+      <form id="formTrabajador">
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="text" id="apellido" placeholder="Apellido" required>
+        <button type="submit">Registrar Trabajador</button>
+      </form>
+    </section>
+
+    <!-- Lista de Trabajadores -->
+    <section>
+      <h2>Lista de Trabajadores</h2>
+      <ul id="listaTrabajadores"></ul>
+    </section>
+
+    <!-- Registro de Horario -->
+    <section>
+      <h2>Registrar Horario</h2>
+      <form id="formHorario">
+        <select id="trabajador" required>
+          <option value="">Selecciona un trabajador</option>
+        </select>
+        <input type="datetime-local" id="entrada" required>
+        <input type="datetime-local" id="salida" required>
+        <button type="submit">Registrar Horario</button>
+      </form>
+    </section>
+
+    <!-- Informe Semanal -->
+    <section>
+      <h2>Informe Semanal</h2>
+      <button id="generarInforme">Generar Informe</button>
+      <button id="exportarPDF">Exportar a PDF</button>
+      <button id="exportarExcel">Exportar a Excel</button>
+      <div id="informe"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
