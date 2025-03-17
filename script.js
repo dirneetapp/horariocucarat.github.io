@@ -11,13 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
   let trabajadores = JSON.parse(localStorage.getItem("trabajadores")) || [];
   let horarios = JSON.parse(localStorage.getItem("horarios")) || [];
 
-  // Función para formatear la fecha a dd/mm/yyyy
+  // Función para formatear la fecha y hora a dd/mm/yyyy HH:MM
   function formatearFecha(fecha) {
     const date = new Date(fecha);
     const dia = String(date.getDate()).padStart(2, "0");
     const mes = String(date.getMonth() + 1).padStart(2, "0"); // Los meses comienzan en 0
     const anio = date.getFullYear();
-    return `${dia}/${mes}/${anio}`;
+    const horas = String(date.getHours()).padStart(2, "0");
+    const minutos = String(date.getMinutes()).padStart(2, "0");
+    return `${dia}/${mes}/${anio} ${horas}:${minutos}`;
   }
 
   // Cargar trabajadores en el select y en la lista
@@ -75,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const salida = document.getElementById("salida").value;
     if (trabajadorIndex === "") return alert("Selecciona un trabajador");
 
-    // Convertir el formato de fecha a dd/mm/yyyy
+    // Convertir el formato de fecha y hora a dd/mm/yyyy HH:MM
     const entradaFormateada = formatearFecha(entrada);
     const salidaFormateada = formatearFecha(salida);
 

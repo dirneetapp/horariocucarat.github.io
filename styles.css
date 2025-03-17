@@ -70,4 +70,35 @@ button:hover {
   .container {
     padding: 10px;
   }
+/* Estilos anteriores... */
+
+/* Estilos para la lista de trabajadores */
+#listaTrabajadores {
+  list-style: none;
+  padding: 0;
+}
+
+#listaTrabajadores li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+}
+
+#listaTrabajadores li button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#listaTrabajadores li button:hover {
+  background-color: #c82333;
+}
 }
